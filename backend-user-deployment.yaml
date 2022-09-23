@@ -20,18 +20,16 @@ spec:
         service: backend-user
     spec:
       containers:
-      - image: ampire90/udagram-api-user:v8
+      - image: ampire90/udagram-api-user:v9
         name: backend-user
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "100Mi"
-            cpu: "300m"
+            memory: "64Mi"
+            cpu: "250m"
           limits:
-            memory: "200Mi"
-            cpu: "600m"
-        command: ["stress"]
-        args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
+            memory: "1024Mi"
+            cpu: "500m"
         env:
         - name: URL
           valueFrom:
